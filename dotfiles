@@ -1,0 +1,14 @@
+#!/bin/bash
+
+LIST=".i3 .i3status.conf .spacemacs .bash_aliases"
+
+if [ "$1" == "r" ]
+then
+    for I in $LIST; do
+	      cp -R $I ~/$I
+    done
+else
+    for I in  $LIST; do
+        cp -R ~/$I $I
+    done
+fi
