@@ -1,6 +1,7 @@
 alias g='git status'
 alias gc='git commit'
 alias gca='git commit -a'
+alias gp='git pull'
 alias gco='git checkout'
 alias gf='git fetch'
 alias gb='git branch'
