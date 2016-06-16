@@ -99,10 +99,10 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace web
-bindsym $mod+2 workspace code
-bindsym $mod+3 workspace com
-bindsym $mod+4 workspace music
+bindsym $mod+1 workspace 1:web
+bindsym $mod+2 workspace 2:code
+bindsym $mod+3 workspace 3:com
+bindsym $mod+4 workspace 4:music
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
@@ -111,10 +111,10 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace web
-bindsym $mod+Shift+2 move container to workspace code
-bindsym $mod+Shift+3 move container to workspace com
-bindsym $mod+Shift+4 move container to workspace music
+bindsym $mod+Shift+1 move container to workspace 1:web
+bindsym $mod+Shift+2 move container to workspace 2:code
+bindsym $mod+Shift+3 move container to workspace 3:com
+bindsym $mod+Shift+4 move container to workspace 4:music
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
@@ -183,6 +183,8 @@ bindsym $mod+n mode $power_control
 bar {
   status_command i3status
   position       top
+  strip_workspace_numbers yes
+
   colors {
     separator #dc322f
     background #002b36
