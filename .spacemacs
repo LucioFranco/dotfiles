@@ -27,16 +27,18 @@ values."
      ;; better-defaults
      emacs-lisp
      git
+     version-control
+     github
      markdown
      javascript
      rust
      org
+     dockerfile
      (shell :variables
              shell-default-height 30
              shell-default-position 'bottom)
      ;; spell-checking
      ;; syntax-checking
-     version-control
      yaml
      )
    ;; List of additional packages that will be installed without being
