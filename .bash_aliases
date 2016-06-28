@@ -11,3 +11,4 @@ alias gcp='git cherry-pick'
 alias ll='ls -l'
 
 alias emacs='emacs -q -nw'
+export EDITOR="emacs -q -nw"
