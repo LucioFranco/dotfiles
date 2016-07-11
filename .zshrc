@@ -19,3 +19,5 @@ source $HOME/.os_config
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
+
+export PATH="$PATH:$HOME/bin"

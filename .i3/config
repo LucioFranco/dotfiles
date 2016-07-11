@@ -73,10 +73,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+b split h
+bindsym $mod+b split v
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -177,6 +177,18 @@ mode  $power_control {
     bindsym Escape mode "default"
 }
 bindsym $mod+n mode $power_control
+
+set $programs "[e]macs [c]hrome [s]lack s[p]otify"
+mode $programs {
+    bindsym e exec emacs; mode "default"
+    bindsym c exec google-chrome; mode "default"
+    bindsym s exec slack; mode "default"
+    bindsym p exec spotify; mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+d mode $programs
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
