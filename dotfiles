@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LIST=".i3/config .i3status.conf .spacemacs .bash_aliases .zshrc"
+LIST=".i3/config .i3status.conf .spacemacs .bash_aliases .zshrc .tmux.conf"
 
 if [ "$1" == "up" ]
 then

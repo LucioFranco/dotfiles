@@ -10,5 +10,16 @@ alias gcp='git cherry-pick'
 
 alias ll='ls -l'
 
-alias emacs='emacs -q -nw'
+function e() {
+    emacs -nw -q $1 $2 $3
+}
+
+function es() {
+    emacs $1 $2 $3
+}
+
+function se() {
+    sudo emacs -nw -q $1 $2 $3
+}
+
 export EDITOR="emacs -q -nw"
