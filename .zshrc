@@ -14,8 +14,8 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
-source $HOME/.bash_aliases
 source $HOME/.os_config
+source $HOME/.bash_aliases
 
 # ssh
 export SSH_KEY_PATH="~/.ssh/id_rsa.pub"

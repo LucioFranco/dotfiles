@@ -6,6 +6,7 @@ alias gco='git checkout'
 alias gf='git fetch'
 alias gb='git branch'
 alias gd='git diff --color=always | less -r'
+alias gdc='git diff --cached --color=always | less -r'
 alias gcp='git cherry-pick'
 
 alias ll='ls -l'
@@ -15,7 +16,7 @@ function e() {
 }
 
 function es() {
-    emacs $1 $2 $3
+    emacs -nw $1 $2 $3
 }
 
 function se() {

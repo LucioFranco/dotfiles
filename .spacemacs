@@ -31,9 +31,20 @@ values."
      github
      markdown
      javascript
+     haskell
+     python
      rust
+     csharp
      org
      dockerfile
+     groovy
+     terraform
+     typescript
+     racket
+     scala
+     react
+     latex
+     auto-complete
      (shell :variables
              shell-default-height 30
              shell-default-position 'bottom)
