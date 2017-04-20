@@ -21,3 +21,6 @@ source $HOME/.bash_aliases
 export SSH_KEY_PATH="~/.ssh/id_rsa.pub"
 
 export PATH="$PATH:$HOME/bin"
+
+export NVM_DIR="/Users/lucio/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

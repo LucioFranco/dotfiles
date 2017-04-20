@@ -18,6 +18,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     sql
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -42,7 +43,10 @@ values."
      typescript
      racket
      scala
-     react
+     php
+     (react :variables
+            js2-basic-offset 2
+      )
      latex
      auto-complete
      (shell :variables
@@ -51,12 +55,18 @@ values."
      ;; spell-checking
      ;; syntax-checking
      yaml
+     (spell-checking :variables
+                     spell-checking-enable-by-default nil
+                     :enabled-for
+                     latex text org)
+
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(
+                                      groovy-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -268,7 +278,15 @@ you should place your code here."
   (setq tab-width 2)
   (setq-default js2-basic-offset 2)
   (setq-default js-indent-level 2)
+  (setq-default
+   ;; js2-mode
+   js2-basic-offset 2
+   ;; web-mode
+   css-indent-offset 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-attr-indent-offset 2)
+  (add-to-list 'auto-mode-alist '("\\Jenkinsfile\\'" . groovy-mode))
   )
 
-;; Do not write anything past this comment. This is where Emacs will
-;; auto-generate custom variable definitions.
