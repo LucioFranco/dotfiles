@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LIST=".i3/config .i3status.conf .spacemacs .bash_aliases .zshrc .tmux.conf"
+LIST=".i3/config .i3status.conf .spacemacs .bash_aliases .zshrc .tmux.conf .atom/package.list .atom/config.cson .atom/keymap.cson .atom/snippets.cson"
 
 if [ "$1" == "up" ]
 then
@@ -9,8 +9,14 @@ then
         echo "Copying file $I"
 	      cp -R $I ~/$I
     done
+
+    echo "syncing atom"
+    apm install --packages-file $HOME/.atom/package.list
 elif [ "$1" == "down"  ]
 then
+    echo "Saving atom packages..."
+    apm list --installed --bare > $HOME/.atom/package.list
+
     echo "Copying files from ~/"
     for I in  $LIST; do
         echo "Copying file $I"

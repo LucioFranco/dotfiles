@@ -1,0 +1,15 @@
+"*":
+  "atom-clock":
+    showClockIcon: true
+  core:
+    projectHome: "/Users/lucio/code"
+    telemetryConsent: "limited"
+  editor:
+    fontSize: 12
+    scrollPastEnd: true
+  "exception-reporting":
+    userId: "66f280b0-1759-4b49-977a-c0eb35be916a"
+".blade.html.php.text":
+  editor:
+    commentEnd: " --}}"
+    commentStart: "{{-- "
