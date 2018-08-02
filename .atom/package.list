@@ -1,4 +1,7 @@
 atom-clock@0.1.16
+atom-elixir@0.2.3
+atom-elixir-formatter@1.0.3
+atom-ide-ui@0.12.0
 atomic-emacs@0.12.1
 autocomplete-paths@2.12.2
 color-picker@2.3.0
@@ -6,6 +9,7 @@ editorconfig@2.2.2
 hey-pane@1.1.0
 highlight-line@0.12.0
 highlight-selected@0.13.1
+ide-elixir@0.2.19
 language-babel@2.85.0
 language-blade@0.40.0
 language-cmake@1.1.0
@@ -18,5 +22,6 @@ language-terraform@0.8.1
 language-vue@0.23.1
 merge-conflicts@1.4.5
 minimap@4.29.8
+monokai@0.24.0
 pane-layout-plus@0.7.4
 

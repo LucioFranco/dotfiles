@@ -1,15 +1,33 @@
 "*":
   "atom-clock":
+    dateFormat: "hh:mm"
     showClockIcon: true
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
   core:
+    disabledPackages: [
+      "atom-elixir"
+      "atom-elixir-formatter"
+      "ide-elixir"
+    ]
     projectHome: "/Users/lucio/code"
     telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "monokai"
+    ]
   editor:
     fontSize: 12
     scrollPastEnd: true
   "exception-reporting":
     userId: "66f280b0-1759-4b49-977a-c0eb35be916a"
+  welcome:
+    showOnStartup: false
 ".blade.html.php.text":
   editor:
     commentEnd: " --}}"
     commentStart: "{{-- "
+".elixir.text":
+  editor:
+    showIndentGuide: false
