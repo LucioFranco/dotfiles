@@ -283,6 +283,8 @@ you should place your code here."
   (setq tab-width 2)
 
   ;; Neo Tree config
+  ;; Icons requires special fonts installed
+  ;; info on that can be found here https://github.com/jaypei/emacs-neotree#theme-config
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
   (setq neo-vc-integration '(char))
 
