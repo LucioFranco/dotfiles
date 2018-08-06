@@ -308,6 +308,10 @@ you should place your code here."
    web-mode-attr-indent-offset 2)
 
   ;; Elixir mode config
+  ;; Create a buffer-local hook to run elixir-format on save, only when we enable elixir-mode.
+  (add-hook 'elixir-mode-hook
+            (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
+
   (add-hook 'elixir-format-hook (lambda ()
                                   (if (projectile-project-p)
                                       (setq elixir-format-arguments
