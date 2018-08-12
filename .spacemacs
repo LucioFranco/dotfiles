@@ -42,7 +42,6 @@ values."
      csharp
      org
      dockerfile
-     ;; groovy
      terraform
      typescript
      racket
@@ -67,7 +66,7 @@ values."
      (spell-checking :variables
                      spell-checking-enable-by-default nil
                      :enabled-for
-                     latex text org)
+                     latex text org markdown)
 
      )
    ;; List of additional packages that will be installed without being
@@ -75,9 +74,11 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(
+                                      direnv
                                       all-the-icons
                                       spaceline-all-the-icons
-                                      groovy-mode)
+                                      groovy-mode
+                                      web-mode)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -181,7 +182,7 @@ values."
    dotspacemacs-display-default-layout nil
    ;; If non nil then the last auto saved layouts are resume automatically upon
    ;; start. (default nil)
-   dotspacemacs-auto-resume-layouts t
+   dotspacemacs-auto-resume-layouts nil
    ;; Location where to auto-save files. Possible values are `original' to
    ;; auto-save the file in-place, `cache' to auto-save the file to another
    ;; file stored in the cache directory and `nil' to disable auto-saving.
@@ -292,7 +293,7 @@ you should place your code here."
   ;; Icons requires special fonts installed
   ;; info on that can be found here https://github.com/jaypei/emacs-neotree#theme-config
   (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-  (setq neo-vc-integration '(char))
+  (setq neo-vc-integration '(face))
 
   ;; JS Config
   (setq-default js2-basic-offset 2)
@@ -321,6 +322,7 @@ you should place your code here."
 
   ;; Setup Jenkins file to open in groovymode
   (add-to-list 'auto-mode-alist '("\\Jenkinsfile\\'" . groovy-mode))
+  (add-to-list 'auto-mode-alist '("\\.blade.php\\'" . web-mode))
 
   ;; Emacs backup settings
   (setq make-backup-files nil) ; stop creating backup~ files
@@ -351,9 +353,13 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "fa2b58bb98b62c3b8cf3b6f02f058ef7827a8e497125de0254f56e373abee088" default)))
+ '(evil-want-Y-yank-to-eol t)
  '(package-selected-packages
    (quote
-    (all-the-icons-gnus typescript-mode hcl-mode powerline faceup pos-tip spinner org-category-capture alert log4e gntp org-mime shut-up auto-complete skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode hydra dash-functional parent-mode projectile request haml-mode gitignore-mode fringe-helper git-gutter+ git-gutter gh marshal logito pcache ht flyspell-correct flycheck flx magit magit-popup git-commit ghub with-editor smartparens iedit anzu evil goto-chg undo-tree highlight yasnippet sbt-mode scala-mode php-mode diminish csharp-mode ghc haskell-mode markdown-mode rust-mode bind-map bind-key packed pythonic f s company dash pkg-info epl helm avy helm-core popup async ranger opencl-mode winum flycheck-credo pandoc-mode ox-pandoc nginx-mode ob-elixir flycheck-mix alchemist elixir-mode tern auctex-latexmk yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toml-mode toc-org tide terraform-mode tagedit sql-indent spacemacs-theme spaceline smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters racket-mode racer quelpa pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file omnisharp noflet neotree multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc intero info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag haskell-snippets groovy-mode google-translate golden-ratio gnuplot github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md flyspell-correct-helm flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav dumb-jump drupal-mode diff-hl define-word cython-mode company-ghci company-ghc column-enforce-mode coffee-mode cmm-mode clean-aindent-mode cargo auto-highlight-symbol auto-dictionary auto-compile auctex anaconda-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
+    (treemacs-projectile treemacs pfuture typescript-mode hcl-mode powerline faceup pos-tip spinner org-category-capture alert log4e gntp org-mime shut-up auto-complete skewer-mode simple-httpd json-snatcher json-reformat multiple-cursors js2-mode hydra dash-functional parent-mode projectile request haml-mode gitignore-mode fringe-helper git-gutter+ git-gutter gh marshal logito pcache ht flyspell-correct flycheck flx magit magit-popup git-commit ghub with-editor smartparens iedit anzu evil goto-chg undo-tree highlight yasnippet sbt-mode scala-mode php-mode diminish csharp-mode ghc haskell-mode markdown-mode rust-mode bind-map bind-key packed pythonic f s company dash pkg-info epl helm avy helm-core popup async ranger opencl-mode winum flycheck-credo pandoc-mode ox-pandoc nginx-mode ob-elixir flycheck-mix alchemist elixir-mode tern auctex-latexmk yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe uuidgen use-package toml-mode toc-org tide terraform-mode tagedit sql-indent spacemacs-theme spaceline smeargle slim-mode shell-pop scss-mode sass-mode restart-emacs rainbow-delimiters racket-mode racer quelpa pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements phpunit phpcbf php-extras php-auto-yasnippets persp-mode pcre2el paradox orgit org-projectile org-present org-pomodoro org-plus-contrib org-download org-bullets open-junk-file omnisharp noflet neotree multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow magit-gh-pulls macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode json-mode js2-refactor js-doc intero info+ indent-guide ido-vertical-mode hy-mode hungry-delete htmlize hlint-refactor hl-todo hindent highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-projectile helm-mode-manager helm-make helm-hoogle helm-gitignore helm-flx helm-descbinds helm-css-scss helm-ag haskell-snippets groovy-mode google-translate golden-ratio gnuplot github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe git-gutter-fringe+ gist gh-md flyspell-correct-helm flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help ensime emmet-mode elisp-slime-nav dumb-jump drupal-mode diff-hl define-word cython-mode company-ghci company-ghc column-enforce-mode coffee-mode cmm-mode clean-aindent-mode cargo auto-highlight-symbol auto-dictionary auto-compile auctex anaconda-mode aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

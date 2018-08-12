@@ -79,7 +79,7 @@ cmd + shift - return : /Applications/iTerm.app/Contents/MacOS/iTerm2
 #cmd - m : open -na /Applications/mpv.app $(pbpaste)
 
 # close focused window
-alt - w : chunkc tiling::window --close
+#alt - w : chunkc tiling::window --close
 
 # focus window
 alt - h : chunkc tiling::window --focus west
@@ -152,6 +152,7 @@ shift + alt - 6 : chunkc tiling::window --send-to-desktop 6
 # shift + alt - 7 : chunkc tiling::window --send-to-desktop 7
 
 # send window to desktop and follow focus
+# TODO: set windows 4,5,6 to follow similar commands as switch to desktop
 shift + cmd - x : chunkc tiling::window --send-to-desktop $(chunkc get _last_active_desktop); chunkc tiling::desktop --focus $(chunkc get _last_active_desktop)
 shift + cmd - z : chunkc tiling::window --send-to-desktop prev; chunkc tiling::desktop --focus prev
 shift + cmd - c : chunkc tiling::window --send-to-desktop next; chunkc tiling::desktop --focus next
@@ -202,13 +203,13 @@ alt - r : chunkc tiling::desktop --rotate 90
 alt - y : chunkc tiling::desktop --mirror vertical
 
 # mirror tree x-axis
-alt - x : chunkc tiling::desktop --mirror horizontal
+#alt - x : chunkc tiling::desktop --mirror horizontal
 
 # toggle desktop offset
 alt - a : chunkc tiling::desktop --toggle offset
 
 # toggle window fullscreen
-alt - f : chunkc tiling::window --toggle fullscreen
+alt + shift - f : chunkc tiling::window --toggle fullscreen
 
 # toggle window native fullscreen
 shift + alt - f : chunkc tiling::window --toggle native-fullscreen
@@ -242,3 +243,6 @@ ctrl + alt - s : chunkc tiling::desktop --layout monocle
 ctrl + alt - d : chunkc tiling::desktop --layout float
 
 ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
+
+# Tiling rules
+#chunkc tiling::rule --owner Chrome -desktop 1
