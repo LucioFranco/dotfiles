@@ -10,6 +10,7 @@ alias gdc='git diff --cached --color=always | less -r'
 alias gcp='git cherry-pick'
 
 alias ll='ls -l'
+alias git=hub
 
 function e() {
     emacs -nw -q $1 $2 $3
