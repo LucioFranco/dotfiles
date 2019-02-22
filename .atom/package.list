@@ -16,6 +16,7 @@ language-cmake@1.1.0
 language-docker@1.1.8
 language-elixir@0.22.0
 language-generic-config@1.4.0
+language-lisp@0.2.0
 language-racket@0.4.0
 language-rust@0.4.12
 language-terraform@0.8.1
